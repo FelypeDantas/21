@@ -4,43 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
     <title>Vamos ao parque?</title>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.9.3/lib/p5.js"></script>
 </head>
 <body>
-    <span>O Parque abriu para nós</span>
+    <div class="container">
+        <span>O Parque abriu para nós🎉</span>
+    </div>
+    <script src="script.js"></script> <!-- External JavaScript -->
 </body>
-<script>
-    var offset = 0;
-    var x;
-    var y;
-    var rad = 20;
-    var doffest = 0.01;
-    function setup(){
-        createCanvas(400, 400);
-        background(0);
-    }
-
-    function draw(){
-        translate(100, 100)
-        x = noise(rad * cos(offset)) * width;
-        y = noise(rad * sin(offset)) * height;
-        strokeWeight(2);
-        stroke(random(255), random(255), random(255));
-        point(x, y);
-        point(200-x, y);
-        point(x, 200-y);
-        point(200-x, 200-y);
-        offset += doffest;
-
-        if(offset > 17){
-            doffest = 0;
-        }
-    }
-
-    function mousePressed(){
-        console.log(offset);
-
-    }
-</script>
 </html>
